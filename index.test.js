@@ -2,6 +2,7 @@ const { alphabetizeStyleSequencesInString } = require("./index.js");
 const correctOrderSingleSequence = "<p>Description</p><p><a href=\"https://www.link.com/\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); color: rgb(59, 89, 152);\">https://www.link.com/</a></p>"; // NOSONAR
 const correctOrderMultipleSequences = "<p><a href=\"https://www.link.com/\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); color: rgb(59, 89, 152); flex: 1;\">https://www.link.com/</a></p><p>Description</p><p><a href=\"https://www.link.com/\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); color: rgb(59, 89, 152);\">https://www.link.com/</a></p>"; // NOSONAR
 const emptyString = "";
+const missingEndSequence = "<p>Description</p><p><a href=\"https://www.link.com/\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); color: rgb(59, 89, 152);>https://www.link.com/</a></p>"; // NOSONAR
 const noSequences = "<p>Description</p><p><a href=\"https://www.link.com/\" rel=\"noopener noreferrer\" target=\"_blank\">https://www.link.com/</a></p>"; // NOSONAR
 const notString = 1;
 const nullValue = null;
@@ -20,6 +21,7 @@ test("alphabetizeStyleSequencesInString(string) - order styles alphabetically", 
   const testCase7 = notString;
   const testCase8 = nullValue;
   const testCase9 = undefinedValue;
+  const testCase10 = String(missingEndSequence);
 
   expect(alphabetizeStyleSequencesInString(testCase1)).toEqual(correctOrderSingleSequence);
   expect(alphabetizeStyleSequencesInString(testCase2)).toEqual(correctOrderSingleSequence);
@@ -30,5 +32,6 @@ test("alphabetizeStyleSequencesInString(string) - order styles alphabetically", 
   expect(alphabetizeStyleSequencesInString(testCase7)).toEqual(notString);
   expect(alphabetizeStyleSequencesInString(testCase8)).toEqual(nullValue);
   expect(alphabetizeStyleSequencesInString(testCase9)).toEqual(undefinedValue);
+  expect(alphabetizeStyleSequencesInString(testCase10)).toEqual(missingEndSequence);
 });
 

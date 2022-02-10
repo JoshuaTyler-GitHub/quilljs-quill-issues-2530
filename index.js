@@ -64,13 +64,13 @@ const findStartSequenceAndEndSequencePositions = (startSequence, endSequence, st
     while(currentPosition < parseString.length) { // NOSONAR
       const startSubString = parseString.substring(currentPosition);
       const startSequenceSubStringPosition = startSubString.search(_startSequence);
-      const startSequencePosition = startSequenceSubStringPosition + currentPosition;
       if(startSequenceSubStringPosition === -1) break; // break if not found
+      const startSequencePosition = startSequenceSubStringPosition + currentPosition;
       const endSubStringStart = startSequencePosition + _startSequence.length;
       const endSubString = parseString.substring(endSubStringStart);
       const endSequenceSubStringPosition = endSubString.search(_endSequence);
-      const endSequencePosition = endSequenceSubStringPosition + endSubStringStart;
       if(endSequenceSubStringPosition === -1) break; // break if not found
+      const endSequencePosition = endSequenceSubStringPosition + endSubStringStart;
       const endSequencePositionWithLength = endSequencePosition + _endSequence.length;
       sequencePositions.push({
         end: Number(endSequencePositionWithLength),
