@@ -1,0 +1,22 @@
+{
+  "name": "quilljs-quill-issues-2530",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaTyler-GitHub/quilljs-quill-issues-2530.git"
+  },
+  "author": "Joshua Tyler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaTyler-GitHub/quilljs-quill-issues-2530/issues"
+  },
+  "homepage": "https://github.com/JoshuaTyler-GitHub/quilljs-quill-issues-2530#readme",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
