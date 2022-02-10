@@ -1,6 +1,6 @@
 const STYLE_END_IDENTIFIER = ";\"";
 const STYLE_START_IDENTIFIER = "style=\"";
-const STYLE_SPLIT_IDENTIGIER = "; ";
+const STYLE_SPLIT_IDENTIFIER = "; ";
 
 const alphabetizeStyleSequencesInString = (styleString) => {
   const parseString = String(styleString);
@@ -29,11 +29,11 @@ const alphabetizeStyleSequencesInString = (styleString) => {
         const strippedStyles = preSortedStyles
           .replace(STYLE_START_IDENTIFIER, '')
           .replace(STYLE_END_IDENTIFIER, '')
-          .split(STYLE_SPLIT_IDENTIGIER);
+          .split(STYLE_SPLIT_IDENTIFIER);
         const sortedStyles = strippedStyles.sort();
         const postSortedStyles = (
           `${STYLE_START_IDENTIFIER}` +
-          `${sortedStyles.join(STYLE_SPLIT_IDENTIGIER)}` +
+          `${sortedStyles.join(STYLE_SPLIT_IDENTIFIER)}` +
           `${STYLE_END_IDENTIFIER}`
         );
         reassemblyString += postSortedStyles;
