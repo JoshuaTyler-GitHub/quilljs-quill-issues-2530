@@ -45,7 +45,7 @@ const alphabetizeStyleSequencesInString = (styleString) => {
     reassemblyString += parseString.substring(lastSequenceEnd);
     return reassemblyString;
   }
-  return parseString;
+  return styleString;
 };
 
 const findStartSequenceAndEndSequencePositions = (startSequence, endSequence, stringToParse) => {
